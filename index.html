@@ -3,21 +3,186 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=h1, initial-scale=1.0" />
-
-    <link rel="stylesheet" href="src/style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>SheCodesPlus</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
+      href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap"
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css
-"
     />
-    <title>FinalProject</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://kit.fontawesome.com/18fd7dc14d.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="src/style.css" />
   </head>
   <body>
-    <div class="container">
-      <h1>Hi</h1>
-      <a href="" class="btn btn-primary">Click me</a>
+    <div class="conteiner">
+      <header>
+        <div class="yourCity">
+          <form>
+            <div class="row">
+              <div class="col-3">
+                <div class="yourCity-temperature">
+                  <span class="temperature" id="celsius-temperature">26</span>
+                  <span class="unit"
+                    ><a href="#" id="celsium">℃/</a>
+                    <a href="#" id="fahrenheit">°F</a>
+                  </span>
+                </div>
+                <div class="yourCity-weather" id="weather"></div>
+                <div class="yourCity-wind">
+                  <i class="fa-solid fa-wind"></i>
+                  <span id="wind-speed">9</span> km\h
+                </div>
+
+                <div class="yourCity-humidity">
+                  💧
+                  <span id="humidity">25</span> %
+                </div>
+              </div>
+              <div class="col-4">
+                <div class="yourCity-city" id="city">Kyiv</div>
+                <div class="yourCity-dayWeek" id="dayWeek">Friday 10:28</div>
+                <div class="yourCity-date" id="date">10.06.22</div>
+              </div>
+              <div class="col-2">
+                <div class="yourCity-weatherIcon">
+                  <img
+                    src="img/undraw_weather_app_re_kcb1.svg"
+                    alt="summer photography"
+                    id="weather-icon"
+                    class="float-left"
+                  />
+                </div>
+              </div>
+              <div class="col-3">
+                <div class="image">
+                  <img
+                    src="img/undraw_world_re_768g (1).svg"
+                    alt="summer photography"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="button-moreInformation">
+              <button>More information</button>
+            </div>
+          </form>
+        </div>
+      </header>
+      <div class="card">
+        <div class="card-body">
+          <form>
+            <div class="row">
+              <div class="col-2">
+                <div class="form-group-titl">date</div>
+                <div class="form-group-day">11.06</div>
+                <div class="form-group-day">12.06</div>
+                <div class="form-group-day">13.06</div>
+                <div class="form-group-day">14.06</div>
+                <div class="form-group-day">15.06</div>
+              </div>
+              <div class="col-2">
+                <div class="form-group-titl">days of the week</div>
+                <div class="form-group-week">Sat</div>
+                <div class="form-group-week">Sun</div>
+                <div class="form-group-week">Mon</div>
+                <div class="form-group-week">Tue</div>
+                <div class="form-group-week">Wed</div>
+              </div>
+              <div class="col-3">
+                <div class="form-group-titl">temperature</div>
+                <div class="form-group-temperature">+32℃/+18℃</div>
+                <div class="form-group-temperature">+30℃/+18℃</div>
+                <div class="form-group-temperature">+32℃/+18℃</div>
+                <div class="form-group-temperature">+32℃/+18℃</div>
+                <div class="form-group-temperature">+32℃/+18℃</div>
+              </div>
+              <div class="col-2">
+                <div class="form-group-titl">wind</div>
+                <div class="form-group-wind">24km\h</div>
+                <div class="form-group-wind">18km\h</div>
+                <div class="form-group-wind">16km\h</div>
+                <div class="form-group-wind">14km\h</div>
+                <div class="form-group-wind">6km\h</div>
+              </div>
+              <div class="col-2">
+                <div class="form-group-titl">humidity</div>
+                <div class="form-group-humidity">44%</div>
+                <div class="form-group-humidity">45%</div>
+                <div class="form-group-humidity">40%</div>
+                <div class="form-group-humidity">42%</div>
+                <div class="form-group-humidity">53%</div>
+              </div>
+              <div class="col-1">
+                <div class="form-group-titl">
+                  <i class="fa-solid fa-sun"></i>
+                </div>
+                <div class="form-group-weatgerIcon">
+                  <i class="fa-solid fa-cloud-sun"></i>
+                </div>
+                <div class="form-group-weatgerIcon">
+                  <i class="fa-solid fa-cloud-sun-rain"></i>
+                </div>
+                <div class="form-group-weatgerIcon">
+                  <i class="fa-solid fa-cloud-sun-rain"></i>
+                </div>
+                <div class="form-group-weatgerIcon">
+                  <i class="fa-solid fa-cloud-showers-heavy"></i>
+                </div>
+                <div class="form-group-weatgerIcon">
+                  <i class="fa-solid fa-cloud-sun"></i>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <footer>
+        <form class="weather-search-form" id="weather-search-form">
+          <div class="row">
+            <div class="col-4">
+              <input
+                type="serch"
+                placeholder="Choose your city"
+                autocomplete="off"
+                class="form-control"
+                id="form-control"
+              />
+            </div>
+            <div class="col-2">
+              <input type="submit" value="Search" class="form-control" />
+            </div>
+            <div class="col-2">
+              <input
+                type="submit"
+                value="Current"
+                class="form-control"
+                id="current-location-button"
+              />
+            </div>
+          </div>
+        </form>
+        <div class="footer-information">
+          <a
+            target="_blank"
+            href="https://github.com/BeTetiana/SheCodesPlusFinalWeatherProject"
+            >Open-source code</a
+          >
+          by <a href="mailto:tibedina@gmail.com">Tetiana Bedina</a>
+        </div>
+      </footer>
     </div>
+
     <script src="src/index.js"></script>
   </body>
 </html>

@@ -1,3 +1,103 @@
-h1 {
-  color: blue;
+body {
+  font-family: "Fredoka One", cursive;
+}
+
+header {
+  font-weight: 500;
+  color: #000;
+  margin: 3% 2% 10px 2%;
+  padding: 20px;
+  background-color: #dfeeea;
+  border: 1px solid #a7c4bc;
+  border-radius: 10px;
+}
+
+button {
+  display: block;
+  border: 1px solid #2f5d62;
+  border-radius: 50px;
+  background: #a7c4bc;
+  transition: all 200ms ease-in-out;
+  font-size: medium;
+  padding: 1px 2px;
+  box-shadow: 1px 1px 1px 1px;
+}
+
+button:hover {
+  border: 1px solid #2f5d62;
+  border-radius: 50px;
+  background: #5e8b7e;
+  color: #fff;
+  cursor: pointer;
+}
+
+footer {
+  font-weight: 500;
+  color: #000;
+  margin: 10px 2% 10px 2%;
+}
+
+.conteiner {
+  width: 700px;
+  background-color: #a7c4bc;
+  border: 1px solid #2f5d62;
+  border-radius: 10px;
+}
+
+.yourCity-temperature,
+.yourCity-city {
+  font-size: 35px;
+}
+.yourCity-dayWeek,
+.yourCity-date,
+.yourCity-weather,
+.yourCity-wind,
+.yourCity-humidity {
+  font-size: medium;
+}
+.yourCity-weather:first-letter {
+  text-transform: capitalize;
+}
+
+.yourCity-weatherIcon {
+  display: block;
+  font-size: 50px;
+  color: rgb(241, 136, 16);
+  padding: auto;
+}
+
+.card {
+  font-size: larger;
+  font-weight: normal;
+  margin: 10px 2%;
+  border: 1px solid #a7c4bc;
+  border-radius: 10px;
+  background: #dfeeea;
+}
+
+.form-group-weatgerIcon {
+  display: block;
+  color: rgb(241, 136, 16);
+}
+
+img {
+  width: 100%;
+  border-radius: 100px;
+}
+.row .form-group-titl {
+  font-size: xx-small;
+  color: #000;
+}
+
+.unit {
+  font-size: 15px;
+  position: relative;
+  top: -15px;
+}
+.footer-information {
+  font-size: small;
+  text-align: left;
+  font-family: monospace;
+  opacity: 0.9;
+  margin: 10px 0 0 0;
 }
