@@ -46,7 +46,7 @@ footer {
 
 .yourCity-temperature,
 .yourCity-city {
-  font-size: 35px;
+  font-size: 40px;
 }
 .yourCity-dayWeek,
 .yourCity-date,
@@ -100,4 +100,9 @@ img {
   font-family: monospace;
   opacity: 0.9;
   margin: 10px 0 0 0;
+}
+.yourCity-temperature .active {
+  color: black;
+  cursor: default;
+  text-decoration: none;
 }
