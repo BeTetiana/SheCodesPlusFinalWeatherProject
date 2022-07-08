@@ -75,9 +75,9 @@ footer {
   background: #dfeeea;
 }
 
-.form-group-weatgerIcon {
-  display: block;
-  color: rgb(241, 136, 16);
+.form-group-weatherIcon {
+  color: #000;
+  font-size: 36px;
 }
 
 img {
@@ -110,4 +110,18 @@ img {
 #email {
   cursor: default;
   text-decoration: none;
+}
+
+.card-body {
+  text-align: center;
+}
+.form-group-temperature {
+  font-size: 13px;
+}
+.form-group-week {
+  font-size: 16;
+  opacity: 0.6;
+}
+.form-group-temperature-min {
+  opacity: 0.6;
 }
