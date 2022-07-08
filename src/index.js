@@ -53,6 +53,10 @@ function formatDate(dat) {
   return `${date}.${month}.${year}`;
 }
 
+let showDate = document.querySelector("#date");
+let nowDate = new Date();
+showDate.innerHTML = formatDate(nowDate);
+
 function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);
   let day = date.getDay();
@@ -60,10 +64,6 @@ function formatDay(timestamp) {
 
   return days[day];
 }
-
-let showDate = document.querySelector("#date");
-let nowDate = new Date();
-showDate.innerHTML = formatDate(nowDate);
 
 function displayForecast(response) {
   let forecast = response.data.daily;
@@ -99,7 +99,7 @@ function displayForecast(response) {
   forecastElement.innerHTML = forecastHTML;
 }
 
-function searchForm(event) {
+function search(event) {
   event.preventDefault();
   let city = document.querySelector("#form-control").value;
   let apiKey = "1bbb13d9aa172c1c76474d1d6442cd2d";
@@ -139,7 +139,7 @@ function showParameters(response) {
 }
 
 let weatherSearchForm = document.querySelector("#weather-search-form");
-weatherSearchForm.addEventListener("submit", searchForm);
+weatherSearchForm.addEventListener("submit", search);
 
 function retrievePosition(position) {
   let latitude = position.coords.latitude;
@@ -157,28 +157,11 @@ function getCurrentLocation(event) {
 let currentLocationButton = document.querySelector("#current-location-button");
 currentLocationButton.addEventListener("click", getCurrentLocation);
 
-function tempFahrenheit(event) {
-  event.preventDefault();
+function searchForm(city) {
+  let apiKey = "1bbb13d9aa172c1c76474d1d6442cd2d";
+  let apiEndpoint = "https://api.openweathermap.org/data/2.5/weather";
+  let apiUrl = `${apiEndpoint}?q=${city}&appid=${apiKey}&units=metric`;
 
-  let fahrenheit = document.querySelector("#celsius-temperature");
-  celsiumTemperature.classList.remove("active");
-  fahrenheitTemperature.classList.add("active");
-  let math = Math.round((celsiusTemp * 9) / 5 + 32);
-  fahrenheit.innerHTML = `${math}`;
+  axios.get(apiUrl).then(showParameters);
 }
-
-function tempCelsium(event) {
-  event.preventDefault();
-  celsiumTemperature.classList.add("active");
-  fahrenheitTemperature.classList.remove("active");
-
-  let celsium = document.querySelector("#celsius-temperature");
-  celsium.innerHTML = Math.round(celsiusTemp);
-}
-let celsiusTemp = null;
-
-let fahrenheitTemperature = document.querySelector("#fahrenheit");
-fahrenheitTemperature.addEventListener("click", tempFahrenheit);
-
-let celsiumTemperature = document.querySelector("#celsium");
-celsiumTemperature.addEventListener("click", tempCelsium);
+searchForm("Kyiv");
