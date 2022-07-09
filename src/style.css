@@ -7,28 +7,9 @@ header {
   color: #000;
   margin: 3% 2% 10px 2%;
   padding: 20px;
-  background-color: #dfeeea;
-  border: 1px solid #a7c4bc;
+  background-color: #a7c4bc;
+  border: 1px solid #2f5d62;
   border-radius: 10px;
-}
-
-button {
-  display: block;
-  border: 1px solid #2f5d62;
-  border-radius: 50px;
-  background: #a7c4bc;
-  transition: all 200ms ease-in-out;
-  font-size: medium;
-  padding: 1px 2px;
-  box-shadow: 1px 1px 1px 1px;
-}
-
-button:hover {
-  border: 1px solid #2f5d62;
-  border-radius: 50px;
-  background: #5e8b7e;
-  color: #fff;
-  cursor: pointer;
 }
 
 footer {
@@ -39,9 +20,10 @@ footer {
 
 .conteiner {
   width: 700px;
-  background-color: #a7c4bc;
+  background-color: #dfeeea;
   border: 1px solid #2f5d62;
   border-radius: 10px;
+  margin: 10px 10px 10px 10px;
 }
 
 .yourCity-temperature,
@@ -70,9 +52,9 @@ footer {
   font-size: larger;
   font-weight: normal;
   margin: 10px 2%;
-  border: 1px solid #a7c4bc;
+  border: 1px solid #2f5d62;
   border-radius: 10px;
-  background: #dfeeea;
+  background: #a7c4bc;
 }
 
 .form-group-weatherIcon {
