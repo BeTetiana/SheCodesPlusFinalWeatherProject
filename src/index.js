@@ -164,4 +164,31 @@ function searchForm(city) {
 
   axios.get(apiUrl).then(showParameters);
 }
+
+function tempFahrenheit(event) {
+  event.preventDefault();
+
+  let fahrenheit = document.querySelector("#celsius-temperature");
+  celsiumTemperature.classList.remove("active");
+  fahrenheitTemperature.classList.add("active");
+  let math = Math.round((celsiusTemp * 9) / 5 + 32);
+  fahrenheit.innerHTML = `${math}`;
+}
+
+function tempCelsium(event) {
+  event.preventDefault();
+  celsiumTemperature.classList.add("active");
+  fahrenheitTemperature.classList.remove("active");
+
+  let celsium = document.querySelector("#celsius-temperature");
+  celsium.innerHTML = Math.round(celsiusTemp);
+}
+
+let celsiusTemp = null;
+
+let fahrenheitTemperature = document.querySelector("#fahrenheit");
+fahrenheitTemperature.addEventListener("click", tempFahrenheit);
+
+let celsiumTemperature = document.querySelector("#celsium");
+celsiumTemperature.addEventListener("click", tempCelsium);
 searchForm("Kyiv");
